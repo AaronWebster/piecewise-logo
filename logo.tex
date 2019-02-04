@@ -1,0 +1,23 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{soldot/.style={only marks,mark=*}}
+\pgfplotsset{holdot/.style={fill=white,only marks,mark=*}}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+     ticks=none,
+     width=10cm,
+     height=5cm,
+     xmin=-5, xmax=6,
+     ymin=-1, ymax=8,
+     axis y line=center,
+     axis x line=middle,
+    ]
+  \addplot [domain=-5:2] {x^2};
+  \addplot [domain=2:6] {-x^2+5*x};
+  \addplot [soldot] coordinates {(2,6)};
+  \addplot [holdot] coordinates {(2,4)};
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}
